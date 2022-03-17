@@ -24,8 +24,9 @@ jobs:
           -archivePath './iOS_Framework_Actions' \
           SKIP_INSTALL=NO \
           BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
-      - uses: EndBug/add-and-commit@master
-        with:
-          message: 'Create framework'
-          add: '. --force'
-          cwd: './pathToRepo/'
+      - name: Commit
+        run: |
+          # Stage the file, commit and push
+          git add .
+          git commit -m "Added framework"
+          git push
