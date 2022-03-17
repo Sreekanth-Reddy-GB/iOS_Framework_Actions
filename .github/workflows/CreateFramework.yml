@@ -13,6 +13,8 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@master
+        with:
+          path: './pathToRepo/'
       - name: Build
         run: |
           xcodebuild archive \
@@ -22,3 +24,8 @@ jobs:
           -archivePath './iOS_Framework_Actions' \
           SKIP_INSTALL=NO \
           BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
+      - uses: EndBug/add-and-commit@master
+        with:
+          message: 'Create framework'
+          add: '. --force'
+          cwd: './pathToRepo/'
