@@ -1,7 +1,1 @@
-xcodebuild archive \
--scheme FrameworkActionsDemo \
--configuration Release \
--destination 'generic/platform=iOS Simulator' \
--archivePath './iOS_Framework_Actions' \
-SKIP_INSTALL=NO \
-BUILD_LIBRARIES_FOR_DISTRIBUTION=YES
+RELEASE_VERSION=master
