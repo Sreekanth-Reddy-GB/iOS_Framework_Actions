@@ -14,8 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@master
       - name: Create a file
-        run: |
-          touch hi.txt
+        run: echo "RELEASE_VERSION=${GITHUB_REF#refs/*/}" > a.txt
       - name: Commit
         run: |
           # Stage the file, commit and push
